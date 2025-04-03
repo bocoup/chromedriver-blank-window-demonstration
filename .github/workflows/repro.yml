@@ -22,5 +22,5 @@ jobs:
         with:
           name: logs
           path: |
-            D:\a\chromedriver-blank-window-demonstration\chromedriver-blank-window-demonstration \*-log.txt
-            D:\a\chromedriver-blank-window-demonstration\chromedriver-blank-window-demonstration \*.png
+            D:\a\chromedriver-blank-window-demonstration\chromedriver-blank-window-demonstration\*-log.txt
+            D:\a\chromedriver-blank-window-demonstration\chromedriver-blank-window-demonstration\*.png
