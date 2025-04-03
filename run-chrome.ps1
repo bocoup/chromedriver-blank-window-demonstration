@@ -36,7 +36,7 @@ Wait-For-HTTP-Response -RequestURL http://localhost:4444/
 Invoke-WebRequest \
   -UseBasicParsing \
   -Method 'POST' \
-  -Body '{"capabilities": {"alwaysMatch": { "browserName": "chrome" } } }'
+  -Body '{"capabilities": {"alwaysMatch": { "browserName": "chrome" } } }' \
   -Uri http://localhost:4444/session >> $pwd\http-testing-log.txt
 
 Add-Type -AssemblyName System.Windows.Forms,System.Drawing
