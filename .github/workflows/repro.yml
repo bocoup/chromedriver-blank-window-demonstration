@@ -1,0 +1,26 @@
+name: repro
+on: [push]
+jobs:
+  repro:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Run harness
+        shell: powershell
+        timeout-minutes: 30
+        run: |
+          & .\run-chrome.ps1
+
+      - name: upload logs and screenshots
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: logs
+          path: |
+            D:\a\aria-at-gh-actions-helper\aria-at-gh-actions-helper\*-log.txt
+            D:\a\aria-at-gh-actions-helper\aria-at-gh-actions-helper\*.png
