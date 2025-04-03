@@ -33,10 +33,10 @@ $webdriverprocess = Start-Job -Init ([ScriptBlock]::Create("Set-Location '$pwd'"
 Write-Output "Waiting for localhost:4444 to start from chromedriver"
 Wait-For-HTTP-Response -RequestURL http://localhost:4444/
 
-Invoke-WebRequest \
-  -UseBasicParsing \
-  -Method 'POST' \
-  -Body '{"capabilities": {"alwaysMatch": { "browserName": "chrome" } } }' \
+Invoke-WebRequest `
+  -UseBasicParsing `
+  -Method 'POST' `
+  -Body '{"capabilities": {"alwaysMatch": { "browserName": "chrome" } } }' `
   -Uri http://localhost:4444/session >> $pwd\http-testing-log.txt
 
 Add-Type -AssemblyName System.Windows.Forms,System.Drawing
