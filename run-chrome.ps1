@@ -1,11 +1,4 @@
-[string]$nvdaVersion = [System.IO.Path]::GetFileNameWithoutExtension($env:NVDA_PORTABLE_ZIP)
-
-Write-Output "Log folder $loglocation"
-
-[string]$nvdaFolder = [System.IO.Path]::GetDirectoryName($env:NVDA_PORTABLE_ZIP)
-Expand-Archive -Path "$env:NVDA_PORTABLE_ZIP" -DestinationPath "$nvdaFolder"
-Write-Output "Starting NVDA $nvdaVersion - $nvdaFolder\$nvdaVersion\nvda.exe"
-& "$nvdaFolder\$nvdaVersion\nvda.exe" --debug-logging
+Write-Output "Log folder $pwd"
 
 # Retries to connect to an http url, allowing for any valid "response"
 # (4xx,5xx,etc also valid)
