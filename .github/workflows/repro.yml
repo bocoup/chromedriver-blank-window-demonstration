@@ -8,7 +8,7 @@ jobs:
 
       - uses: browser-actions/setup-chrome@v1
         with:
-          chrome-version: stable
+          chrome-version: latest
 
       - name: Run harness
         shell: powershell
